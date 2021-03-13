@@ -2,10 +2,10 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = 'Distance';
+    button.addEventListener('click', acquireDistance());
 
     let places = staticLoadPlaces();
     renderPlaces(places);
-    acquireDistance();
 };
 
 function staticLoadPlaces() {
@@ -82,10 +82,8 @@ function renderPlaces(places) {
 
 function acquireDistance()
 {
-    document.querySelector('button[data-action="change"]').addEventListener('click', function () 
-        {
+    
             const div = document.querySelector('.instructions');
             const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
             div.innerText = distanceMsg;
-        });
 }
