@@ -1,7 +1,7 @@
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
+    button.innerText = 'Distance';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
@@ -69,7 +69,7 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-entity-place', `latitude: 52.2667465209961; longitude: -7.09122848510742;`);
 
         setModel(models[modelIndex], model);
 
