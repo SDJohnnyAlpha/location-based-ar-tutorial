@@ -5,6 +5,7 @@ window.onload = () => {
 
     let places = staticLoadPlaces();
     renderPlaces(places);
+    acquireDistance();
 };
 
 function staticLoadPlaces() {
@@ -75,17 +76,16 @@ function renderPlaces(places) {
 
         model.setAttribute('animation-mixer', '');
 
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () 
+        scene.appendChild(model);
+    });
+}
+
+function acquireDistance()
+{
+    document.querySelector('button[data-action="change"]').addEventListener('click', function () 
         {
             const div = document.querySelector('.instructions');
             const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
             div.innerText = distanceMsg;
-        //    var entity = document.querySelector('[gps-entity-place]');
-          //  modelIndex++;
-          //  var newIndex = modelIndex % models.length;
-          //  setModel(models[newIndex], entity);
         });
-
-        scene.appendChild(model);
-    });
 }
