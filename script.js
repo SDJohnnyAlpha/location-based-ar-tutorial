@@ -13,8 +13,8 @@ function staticLoadPlaces() {
             name: 'Pokèmon',
             location: {
                 // decomment the following and add coordinates:
-                // lat: <your-latitude>,
-                // lng: <your-longitude>,
+                lat: 52.2667465209961,
+                lng: -7.09122848510742,
             },
         },
     ];
@@ -75,11 +75,15 @@ function renderPlaces(places) {
 
         model.setAttribute('animation-mixer', '');
 
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () 
+        {
+            const div = document.querySelector('.instructions');
+            const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+            div.innerText = distanceMsg;
+        //    var entity = document.querySelector('[gps-entity-place]');
+          //  modelIndex++;
+          //  var newIndex = modelIndex % models.length;
+          //  setModel(models[newIndex], entity);
         });
 
         scene.appendChild(model);
